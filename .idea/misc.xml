@@ -18,9 +18,6 @@
     <service-url>https://jcenter.bintray.com</service-url>
     <service-url>https://nexus/nexus/content/groups/core-staging/</service-url>
   </component>
-  <component name="ProjectDictionaryState">
-    <dictionary name="moma" />
-  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>

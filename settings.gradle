@@ -1,2 +1,3 @@
 rootProject.name = 'timetraq'
 
+include('daemon', 'viewer')

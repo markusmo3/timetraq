@@ -1,24 +1,26 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import java.net.URI
 
 plugins {
-    kotlin("jvm") version "1.3.11"
+    base
+    kotlin("jvm") version "1.3.20" apply false
 }
 
-group = "com.github.markusmo3.timetraq"
-version = "1.0-SNAPSHOT"
+allprojects {
 
-repositories {
-    mavenCentral()
+    group = "com.github.markusmo3.timetraq"
+    version = "1.0-SNAPSHOT"
+
+    repositories {
+        mavenCentral()
+        maven {
+            url = URI.create("https://dl.bintray.com/kotlin/exposed/")
+        }
+    }
 }
 
 dependencies {
-    compile(kotlin("stdlib-jdk8"))
-    compile("net.java.dev.jna:jna:5.2.+")
-    compile("net.java.dev.jna:jna-platform:5.2.+")
-    compile("no.tornado:tornadofx:1.7.+")
-    compile("org.jetbrains.exposed:exposed:0.12.+")
-}
-
-tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "1.8"
+    // Make the root project archives configuration depend on every subproject
+    subprojects.forEach {
+        archives(it)
+    }
 }

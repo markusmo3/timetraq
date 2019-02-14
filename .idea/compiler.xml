@@ -7,5 +7,9 @@
         <outputRelativeToContentRoot value="true" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="com.github.markusmo3.timetraq.timetraq.main" target="1.8" />
+      <module name="com.github.markusmo3.timetraq.timetraq.test" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
